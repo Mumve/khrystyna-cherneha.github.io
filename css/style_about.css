@@ -1,0 +1,39 @@
+#s2 {
+    background-color: white;
+    padding: 0px;
+    margin-top: 0px;
+       width: 100wh;
+    height: auto;
+}
+h1 {
+    margin: 20px;
+    padding-top: 55px;
+ 
+}
+p {
+    text-align: inherit;
+}
+.information {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 45fr 35fr;
+  grid-gap: 1em;
+  font-family: "Helvetica", serif;
+    align-items: flex-end;
+    justify-content: flex-end;
+    
+}
+
+img {
+  max-width: 100%;
+    margin: 10 10 10 10px auto;
+    padding: 0px;
+}
+
+@media (max-width: 750px) {
+  .information {
+    grid-template-columns: 100fr;
+    grid-template-areas: "header" "main" "sidebar" "footer";
+    grid-gap: 0.5em;
+  }
+}

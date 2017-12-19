@@ -1,0 +1,236 @@
+/*********************************/
+
+
+/* Приклад коду властивостей для */
+
+
+/* навігаційної панелі .navbar   */
+
+
+/* з ідентифікатором #mainNav    */
+
+
+/*********************************/
+
+#mainNav {
+    margin-top: 1.5rem;
+    /* Navbar зміщений вниз на 1.5rem за рахунок відступу зверху */
+    padding: 0;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+
+/* Властивості Navbar після початку скролу */
+
+
+/* У Navbar з'являється додатковий клас .navbar-shrink */
+
+
+/* зникає відступ зверху */
+
+
+/* та змінюється колір фону */
+
+#mainNav.navbar-shrink {
+    margin-top: 0;
+    background-color: black;
+    /* Колір фону необхідно змінити на власний */
+}
+
+
+/* Властивості Лого */
+
+#mainNav .navbar-brand {
+    /* Зовнішні відступи для Лого */
+/*    margin: .5rem 0 .75rem;*/
+    /* зверху - 0.5rem, знизу - 0.75rem, справа та зліва - 0 */
+}
+
+
+/* Властивості "гамбургер-меню" */
+
+
+/*
+#mainNav .navbar-toggler {
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background-color: white;
+}
+
+.fa-bars:before {
+    color: #fc0;
+    font-size: 1.5rem;
+}
+*/
+
+.menu {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 20px;
+}
+
+.menu span {
+    margin: 0 auto;
+    position: relative;
+    top: 5px;
+}
+
+.menu span:before,
+.menu span:after {
+    position: absolute;
+    content: '';
+}
+
+.menu span,
+.menu span:before,
+.menu span:after {
+    width: 30px;
+    height: 6px;
+    background-color: white;
+    display: block;
+}
+
+.menu span:before {
+    margin-top: -12px;
+}
+
+.menu span:after {
+    margin-top: 12px;
+}
+
+.example5 span {
+    -webkit-transition-duration: 0s;
+    transition-duration: 0s;
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+}
+
+.example5:hover span {
+    background-color: rgba(0, 0, 0, 0.0);
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+}
+
+.example5 span:before {
+    -webkit-transition-property: margin, -webkit-transform;
+    transition-property: margin, transform;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-transition-delay: 0.2s, 0s;
+    transition-delay: 0.2s, 0s;
+}
+
+.example5:hover span:before {
+    margin-top: 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transition-delay: 0s, 0.2s;
+    transition-delay: 0s, 0.2s;
+}
+
+.example5 span:after {
+    -webkit-transition-property: margin, -webkit-transform;
+    transition-property: margin, transform;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-transition-delay: 0.2s, 0s;
+    transition-delay: 0.2s, 0s;
+}
+
+.example5:hover span:after {
+    margin-top: 0;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-transition-delay: 0s, 0.2s;
+    transition-delay: 0s, 0.2s;
+}
+
+
+/* Кінець властивостей "гамбургер-меню" */
+
+
+/* Властивості лінків меню */
+
+#mainNav .nav-link {
+    background: transparent;
+    border-radius: 0rem;
+    color: white;
+    margin-left: 1rem;
+    padding: .2rem .75rem;
+    text-align: right;
+}
+
+#mainNav .nav-link:hover {
+    color: #fff;
+}
+
+#mainNav .nav-link.active {
+    color: gray;
+/*    border: 2px solid #fff;*/
+}
+
+
+
+/* Кінець властивостей лінків меню */
+
+
+/* Зміна вигляду навігаційної панелі для екранів менше 767px */
+
+
+/* працює у парі з додатковим класом для .navbar */
+
+
+/* .navbar-expand-md. УВАГА! При зміні на клас .navbar-expand-sm */
+
+
+/* або .navbar-expand-lg необхідно змінити точку breakpoints на  */
+
+
+/* 565px або 991px відповідно до обраного класу  */
+
+@media screen and (max-width: 767px) {
+    /* Зміна властивостей усіх контейнерів всередині #page-top */
+    #page-top .container {
+        max-width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    /* Зміна властивостей контейнера всередині */
+    /* навігаційної панелі #mainNav */
+    #mainNav .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    /* Зміна властивостей лінків меню */
+    #mainNav .navbar-nav {
+        background-color: black;
+        /* Загальний колір фон під усіма лінками */
+    }
+    #mainNav .nav-link {
+        border-radius: 0;
+        margin: 0;
+    }
+    #mainNav .nav-link {
+        padding: .5rem 1.5rem;
+        /*        border-top: 1px solid #666;*/
+    }
+    #mainNav .nav-link,
+    #mainNav .nav-link.active,
+    #mainNav.navbar-shrink .nav-link:hover {
+        background: transparent;
+    }
+    /* Кінець змінам властивостей лінків меню */
+    /* Зміна властивостей "гамбургер-меню" */
+    #mainNav .navbar-toggler {
+        margin-right: 15px;
+    }
+    /* Зміна властивостей Лого */
+    #mainNav .navbar-brand {
+        margin-left: 15px;
+    }
+}
